@@ -1,0 +1,120 @@
+[[plugins]]
+name = 'utility/dein'
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+name = 'utility/syntastic'
+repo = 'vim-syntastic/syntastic'
+hook_add = '''
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+'''
+
+[[plugins]]
+name = 'utility/nvim-tree'
+repo = 'kyazdani42/nvim-tree.lua'
+hook_add = '''
+lua << EOF
+require'nvim-tree'.setup {
+  disable_netrw        = true,
+  hijack_netrw         = true,
+  open_on_setup        = false,
+  ignore_ft_on_setup   = {},
+  auto_close           = false,
+  auto_reload_on_write = true,
+  open_on_tab          = false,
+  hijack_cursor        = false,
+  update_cwd           = false,
+  update_to_buf_dir    = {
+    enable = true,
+    auto_open = true,
+  },
+  diagnostics = {
+    enable = false,
+  },
+  update_focused_file = {
+    enable      = false,
+    update_cwd  = false,
+    ignore_list = {}
+  },
+  system_open = {
+    cmd  = nil,
+    args = {}
+  },
+  filters = {
+    dotfiles = false,
+    custom = {}
+  },
+  view = {
+    width = 30,
+    height = 30,
+    hide_root_folder = false,
+    side = 'left',
+    auto_resize = false,
+    mappings = {
+      custom_only = false,
+      list = {}
+    },
+    number = false,
+    relativenumber = false,
+    signcolumn = "yes"
+  },
+  trash = {
+    cmd = "trash",
+    require_confirm = true
+  },
+  actions = {
+    change_dir = {
+      global = false,
+    },
+    open_file = {
+      quit_on_open = false,
+    }
+  }
+}
+EOF
+'''
+
+[[plugins]]
+name = 'utility/ultisnips'
+repo = 'SirVer/ultisnips'
+hook_add = '''
+let g:UltiSnipesExpandTrigger="<tab>"
+let g:UltiSnipesJumpForwardTrigger="<c-b>"
+let g:UltiSnipesJumpBackwardTrigger="<c-z>"
+'''
+
+[[plugins]]
+name = 'visual/plastic.vim'
+repo = 'flrnd/plastic.vim'
+hook_add = '''
+colorscheme plastic
+'''
+
+[[plugins]]
+name = 'visual/vim-airline'
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+let g:airline#extensions#tabline#enabled = 1
+'''
+
+[[plugins]]
+name = 'visual/vim-airline-themes'
+repo = 'vim-airline/vim-airline-themes'
+hook_add = '''
+let g:airline_theme = 'luna'
+'''
+
+[[plugins]]
+name = 'visual/indentLine'
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+name = 'visual/vim-devicons'
+repo = 'ryanoasis/vim-devicons'
