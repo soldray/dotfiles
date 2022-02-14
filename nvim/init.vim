@@ -28,7 +28,7 @@ set showcmd
 set showmatch
 set splitright
 set splitbelow
-set term=zsh
+set shell=zsh
 
 " Install dein
 if !isdirectory(s:dein_dir)
