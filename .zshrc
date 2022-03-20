@@ -5,6 +5,11 @@ CACHE_HOME=${XDG_CACHE_HOME:-$HOME/.cache}
 ZSH_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zsh"
 
 # ----
+# Variables
+# ----
+EDITOR="nvim"
+
+# ----
 # Zinit scheme
 # ----
 ZINIT_HOME="$ZSH_HOME/zinit"
@@ -22,3 +27,4 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 # Disable git migration.
 POWERLEVEL9K_DISABLE_GITSTATUS=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=dir
+

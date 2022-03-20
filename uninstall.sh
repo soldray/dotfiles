@@ -24,3 +24,11 @@ rm -rf $HOME/.local/share/zsh
 rm -rf $HOME/.local/share/zinit
 
 echo "Z-Shell's Done."
+
+# ----
+# latexmk
+# ----
+
+rm -f $HOME/.latexmkrc
+
+echo "latexmk's Done."

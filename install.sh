@@ -24,3 +24,11 @@ copy .p10k.zsh $HOME
 copy .zshrc $HOME
 
 echo "Z-Shell's Done."
+
+# ----
+# latexmk
+# ----
+
+copy .latexmkrc $HOME
+
+echo "latexmkrc's Done."
