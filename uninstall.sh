@@ -1,24 +1,13 @@
-#/bin/zsh
-
-function remove-dir {
-  if [ -d $1 ]; then
-    rm -rf $1
-  fi
-}
-
-function remove-file {
-  if [ -f $1 ]; then
-    rm -f $1
-  fi
-}
+#!/bin/sh
 
 # ----
 # Neovim
 # ----
 
-remove-dir $HOME/.local/share/nvim
-remove-dir $HOME/.cache/nvim
-remove-dir $HOME/.config/nvim
+rm -rf $HOME/.cache/nvim
+rm -rf $HOME/.config/nvim
+
+rm -rf $HOME/.local/share/nvim
 
 echo "Neovim's Done."
 
@@ -26,14 +15,12 @@ echo "Neovim's Done."
 # Z-Shell
 # ----
 
-remove-file $HOME/.zshrc
+rm -f $HOME/.zshrc
 
-if [ -f $HOME/.p10k.zsh ]; then
-  rm -f $HOME/.p10k.zsh
-  rm -rf $HOME/.cache/p10k*
-fi
+rm -f $HOME/.p10k.zsh
+rm -rf $HOME/.cache/p10k*
 
-remove-dir $HOME/.local/share/zsh
-remove-dir $HOME/.local/share/zinit
+rm -rf $HOME/.local/share/zsh
+rm -rf $HOME/.local/share/zinit
 
 echo "Z-Shell's Done."
