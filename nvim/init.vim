@@ -29,6 +29,7 @@ set showmatch
 set splitright
 set splitbelow
 set shell=zsh
+set hlsearch
 
 " Install dein
 if !isdirectory(s:dein_dir)
