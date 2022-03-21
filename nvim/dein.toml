@@ -24,6 +24,7 @@ lua << EOF
 require'nvim-tree'.setup {
   disable_netrw = true,
   hijack_netrw = true,
+  open_on_setup = true,
 
   view = {
     width = 36,
@@ -31,7 +32,6 @@ require'nvim-tree'.setup {
 
   actions = {
     open_file = {
-      quit_on_open = false,
       resize_window = true,
     },
   },
