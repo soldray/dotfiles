@@ -1,0 +1,59 @@
+snippet init
+#include <stdio.h>
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+using ll = long long;
+
+#define yn(pope) (pope ? "Yes" : "No")
+
+#define rep(i, n, m) for (int i = (n); i < (m); i++)
+#define rrep(i, n, m) for (int i = (n); i > m; i--)
+
+#define IINF (1 << 30)
+#define INF (1ll << 60)
+
+int main() {
+
+  return 0;
+}
+endsnippet
+
+snippet dsu
+struct DSU {
+public :
+  vector<int> T;
+
+  DSU(int N) {
+    T.resize(N, -1);
+  }
+
+  int root(int a) {
+    if (T[a] < 0) {
+      return a;
+    } else {
+      return T[a] = root(T[a]);
+    }
+  }
+
+  void unite(int a, int b) {
+    int ra = root(a);
+    int rb = root(b);
+
+    if (ra == rb) { return; }
+
+    T[rb] += T[ra];
+    T[ra] = rb;
+  }
+
+  bool same(int a, int b) {
+    return root(a) == root(b);
+  }
+
+  int size(int a) {
+    return -T[root(a)];
+  }
+};
+endsnippet

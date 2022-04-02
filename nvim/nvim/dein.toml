@@ -1,0 +1,85 @@
+[[plugins]]
+name = 'utility/dein'
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+name = 'utility/syntastic'
+repo = 'vim-syntastic/syntastic'
+hook_add = '''
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_quiet_messages = {
+  \ "level"  : "warnings",
+  \ "type"   : "style",
+  \ "regex" : "-Wc++11-extensions" }
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+'''
+
+[[plugins]]
+name = 'utility/nvim-tree'
+repo = 'kyazdani42/nvim-tree.lua'
+hook_add = '''
+lua << EOF
+require'nvim-tree'.setup {
+  disable_netrw = true,
+  hijack_netrw = true,
+  open_on_setup = true,
+
+  view = {
+    width = 36,
+  },
+
+  actions = {
+    open_file = {
+      resize_window = true,
+    },
+  },
+}
+EOF
+'''
+
+[[plugins]]
+name = 'utility/ultisnips'
+repo = 'SirVer/ultisnips'
+hook_add = '''
+let g:UltiSnipesExpandTrigger="<tab>"
+let g:UltiSnipesJumpForwardTrigger="<c-b>"
+let g:UltiSnipesJumpBackwardTrigger="<c-z>"
+'''
+
+[[plugins]]
+name = 'visual/plastic.vim'
+repo = 'flrnd/plastic.vim'
+hook_add = '''
+colorscheme plastic
+'''
+
+[[plugins]]
+name = 'visual/vim-airline'
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+'''
+
+[[plugins]]
+name = 'visual/vim-airline-themes'
+repo = 'vim-airline/vim-airline-themes'
+hook_add = '''
+let g:airline_theme = 'luna'
+'''
+
+[[plugins]]
+name = 'visual/indentLine'
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+name = 'visual/vim-devicons'
+repo = 'ryanoasis/vim-devicons'
