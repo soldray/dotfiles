@@ -10,7 +10,7 @@ let s:dein_dir    = s:nvim_data . '/dein'
 " provider config
 " Turn 0 into 1 or delete " if you use
 
-let g:loaded_python_provider  = 0
+let g:loaded_python3_provider  = 0
 let g:loaded_ruby_provider    = 0
 let g:loaded_perl_provider    = 0
 let g:loaded_node_provider    = 0
@@ -30,6 +30,19 @@ set splitright
 set splitbelow
 set shell=zsh
 set hlsearch
+set conceallevel=0
+set completeopt=menuone,noinsert
+
+"function! OpenCompletion()
+"    if !pumvisible() && ((v:char >= 'a' && v:char <= 'z') || (v:char >= 'A' && v:char <= 'Z'))
+"        call feedkeys("\<C-x>\<C-o>", "n")
+"    endif
+"endfunction
+
+"autocmd InsertCharPre * call OpenCompletion()
+
+filetype plugin indent on
+" syntax on
 
 " Install dein
 if !isdirectory(s:dein_dir)
@@ -55,4 +68,3 @@ if has('vim_starting') && dein#check_install()
   echo 'Finished installing plugins.'
 endif
 
-syntax enable
